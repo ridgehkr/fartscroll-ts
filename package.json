@@ -1,29 +1,30 @@
 {
-  "devDependencies": {
-    "typescript": "^5.7.3",
-    "vite": "^6.1.0"
-  },
-  "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build"
-  },
   "name": "@ridgehkr/fartscroll",
+  "version": "1.0.0e",
   "description": "Everyone farts. And now your web pages can too.",
-  "version": "1.0.0",
-  "main": "dist/index.js",
-  "module": "dist/index.js",
-  "types": "dist/index.d.ts",
   "type": "module",
-  "dependencies": {
-    "esbuild": "^0.24.2",
-    "fsevents": "^2.3.3",
-    "nanoid": "^3.3.8",
-    "picocolors": "^1.1.1",
-    "postcss": "^8.5.2",
-    "rollup": "^4.34.7",
-    "source-map-js": "^1.2.1"
+  "main": "dist/index.js",
+  "exports": {
+    "import": "./dist/index.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --dts",
+    "prepublishOnly": "npm run build",
+    "clean": "rm -rf dist",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "keywords": [
+    "typescript",
+    "npm",
+    "module",
+    "esm",
+    "fartscroll"
+  ],
+  "author": "Caleb Pierce - https://calebpierce.dev",
+  "license": "./LICENSE",
+  "devDependencies": {
+    "tsup": "^7.2.0",
+    "typescript": "^5.4.0"
+  }
 }

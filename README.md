@@ -10,7 +10,7 @@ This is a fork of [The Onion's fartscroll.js](https://theonion.github.io/fartscr
 2. Import and initialize the fartscroll plugin:
 
 ```javascript
-import fartscroll from '@ridgehkr/fartscroll'
+import fartScroll from '@ridgehkr/fartscroll'
 
 // Fart every 400 pixels scrolled
 fartscroll()

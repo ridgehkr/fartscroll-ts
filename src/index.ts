@@ -24,7 +24,7 @@ const fartSounds: SoundData = {
 /**
  * Creates a single reusable audio player.
  */
-export const createAudioPlayer = (soundData: SoundData) => {
+const createAudioPlayer = (soundData: SoundData) => {
   const audio = new Audio()
   audio.preload = 'auto'
 
@@ -44,7 +44,7 @@ export const createAudioPlayer = (soundData: SoundData) => {
 /**
  * Optimized fart scrolling using requestAnimationFrame and debouncing.
  */
-export const startFartScroll = (threshold: number = 400): (() => void) => {
+const startFartScroll = (threshold: number = 400): (() => void) => {
   let lastScrollY = window.scrollY
   let ticking = false
   const { playRandomFart } = createAudioPlayer(fartSounds)
@@ -68,3 +68,5 @@ export const startFartScroll = (threshold: number = 400): (() => void) => {
   // Return a cleanup function to stop fart scrolling
   return () => window.removeEventListener('scroll', onScroll)
 }
+
+export default startFartScroll
