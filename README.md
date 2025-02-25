@@ -1,20 +1,22 @@
 # fartscroll.js
 
-Everyone farts. And now your web pages can too.
+**Everyone farts. And now your web pages can too.**
 
-_Now with 100% less jQuery! (Sorry, jQuery, we still love you)_
+This is a fork of [The Onion's fartscroll.js](https://theonion.github.io/fartscroll.js/), modernized as an NPM module and written in TypeScript.
 
-### Setup:
+## Installation
 
-1. Include "fartscroll.js" in your page. (You can use the latest from our CDN: [//code.onion.com/fartscroll.js](http://code.onion.com/fartscroll.js))
-2. Initialize the fartscroll plugin once the DOM has loaded:
+1. `npm install @ridgehkr/fartscroll`
+2. Import and initialize the fartscroll plugin:
 
 ```javascript
+import fartscroll from '@ridgehkr/fartscroll'
+
 // Fart every 400 pixels scrolled
-fartscroll(); 
+fartscroll()
 
 // Fart every 800 pixels scrolled
-fartscroll(800);
+fartscroll(800)
 ```
-    
-More info at [http://theonion.github.io/fartscroll.js/](http://theonion.github.io/fartscroll.js/).
+
+More info at [https://github.com/ridgehkr/fartscroll.js](https://github.com/ridgehkr/fartscroll.js).
