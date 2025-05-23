@@ -3,7 +3,6 @@
   "version": "1.0.0-alpha.0",
   "description": "Everyone farts. And now your web pages can too.",
   "type": "module",
-  "main": "dist/index.js",
   "module": "./dist/index.mjs",
   "types": "dist/index.d.ts",
   "files": [
