@@ -1,18 +1,29 @@
 {
   "name": "@ridgehkr/fartscroll",
-  "version": "1.0.0e",
+  "version": "1.0.0-alpha.0",
   "description": "Everyone farts. And now your web pages can too.",
   "type": "module",
   "main": "dist/index.js",
-  "exports": {
-    "import": "./dist/index.js"
-  },
+  "module": "./dist/index.mjs",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs"
+    }
+  },
   "scripts": {
-    "build": "tsup src/index.ts --format esm --dts",
+    "build": "unbuild",
+    "dev": "unbuild --stub",
     "prepublishOnly": "npm run build",
     "clean": "rm -rf dist",
-    "test": "echo \"No tests specified\" && exit 0"
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "lint": "eslint 'src/**/*.ts'",
+    "prepare": "husky"
   },
   "keywords": [
     "typescript",
@@ -24,7 +35,17 @@
   "author": "Caleb Pierce - https://calebpierce.dev",
   "license": "./LICENSE",
   "devDependencies": {
-    "tsup": "^7.2.0",
-    "typescript": "^5.4.0"
-  }
+    "@typescript-eslint/eslint-plugin": "^8.32.1",
+    "@vitest/ui": "^3.1.4",
+    "eslint": "^9.27.0",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-prettier": "^5.4.0",
+    "husky": "^9.1.7",
+    "jsdom": "^26.1.0",
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.3",
+    "unbuild": "^3.5.0",
+    "vitest": "^3.1.4"
+  },
+  "packageManager": "pnpm@8.11.0"
 }
