@@ -2,11 +2,17 @@
 
 import { farts } from './sounds'
 
+/**
+ * Defines the structure of the sound data.
+ */
 type SoundData = {
   prefix: string
   sound: string[]
 }
 
+/**
+ * Fart sound data containing the prefix and sound array.
+ */
 const fartSounds: SoundData = {
   prefix: 'data:audio/mp3;base64,',
   sound: farts,
@@ -14,6 +20,8 @@ const fartSounds: SoundData = {
 
 /**
  * Creates a single reusable audio player.
+ * @param {SoundData} soundData - The sound data containing the prefix and sound array.
+ * @returns {Object} - An object containing the audio element and a function to play a random fart sound.
  */
 const createAudioPlayer = (soundData: SoundData) => {
   const audio = new Audio()
@@ -34,6 +42,8 @@ const createAudioPlayer = (soundData: SoundData) => {
 
 /**
  * Optimized fart scrolling using requestAnimationFrame and debouncing.
+ * @param {number} threshold - The scroll distance threshold to trigger a fart sound.
+ * @returns {Function} - A function to stop the fart scrolling.
  */
 const startFartScroll = (threshold: number = 400): (() => void) => {
   let lastScrollY = window.scrollY
@@ -56,7 +66,7 @@ const startFartScroll = (threshold: number = 400): (() => void) => {
 
   window.addEventListener('scroll', onScroll)
 
-  // Return a cleanup function to stop fart scrolling
+  // a cleanup function to stop fart scrolling
   return () => window.removeEventListener('scroll', onScroll)
 }
 

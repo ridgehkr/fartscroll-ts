@@ -1,5 +1,5 @@
 {
-  "name": "@ridgehkr/fartscroll",
+  "name": "@ridgehkr/fartscroll-ts",
   "version": "1.0.0-alpha.0",
   "description": "Everyone farts. And now your web pages can too.",
   "type": "module",
@@ -34,6 +34,13 @@
   ],
   "author": "Caleb Pierce - https://calebpierce.dev",
   "license": "./LICENSE",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ridgehkr/fartscroll-ts.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ridgehkr/fartscroll-ts/issues"
+  },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^8.32.1",
     "@vitest/ui": "^3.1.4",

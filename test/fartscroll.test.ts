@@ -19,19 +19,18 @@ class MockAudio {
 
 describe('startFartScroll', () => {
   beforeEach(() => {
-    // Reset our fake‐Audio
     MockAudio.instances = []
 
-    // Install MockAudio into the JSDOM window
+    // install MockAudio into the JSDOM window
     ;(globalThis as any).Audio = MockAudio
 
-    // Make RAF run callbacks immediately
+    // make RAF run callbacks immediately
     ;(globalThis as any).requestAnimationFrame = (cb: FrameRequestCallback) => {
       cb(0)
       return 0
     }
 
-    // Ensure scrollY is writable
+    // ensure scrollY is writable
     Object.defineProperty(window, 'scrollY', {
       writable: true,
       configurable: true,
@@ -47,12 +46,12 @@ describe('startFartScroll', () => {
     const threshold = 10
     const cleanup = startFartScroll(threshold)
 
-    // We should have created an Audio and set it to preload.
+    // check that an Audio was created and set to preload.
     expect(MockAudio.instances).toHaveLength(1)
     const audio = MockAudio.instances[0]
     expect(audio.preload).toBe('auto')
 
-    // Simulate a scroll past the threshold
+    // scroll past the threshold
     window.scrollY = threshold + 5
     window.dispatchEvent(new Event('scroll'))
 
@@ -68,10 +67,10 @@ describe('startFartScroll', () => {
     const threshold = 0
     const cleanup = startFartScroll(threshold)
 
-    // Remove the listener immediately
+    // remove the listener immediately
     cleanup()
 
-    // Any subsequent scroll should not trigger play
+    // any subsequent scroll should not trigger play
     window.scrollY = threshold + 100
     window.dispatchEvent(new Event('scroll'))
 
