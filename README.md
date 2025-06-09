@@ -2,7 +2,9 @@
 
 **Everyone farts. And now your web pages can too.**
 
-This is a fork of [The Onion's fartscroll.js](https://theonion.github.io/fartscroll.js/), created because the original project is no longer actively maintained and utilizes practices that are no longer recommend (e.g. Bower). This version aims to modernize the codebase with TypeScript, NPM support, unit tests, and other modern features.
+This is a permanent fork of [The Onion's fartscroll.js](https://theonion.github.io/fartscroll.js/), created because the original project is no longer actively maintained and relies on outdated tooling (e.g. Bower). This version updates the codebase with TypeScript, NPM support, unit tests, and other modern development practices.
+
+An essential gem of the old internet, fartscroll must be preserved with the care and rigor it deserves.
 
 ## 📦 Installation
 
